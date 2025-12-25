@@ -22,7 +22,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqtel"]
 size = Vector2(106, 150)
 
 [node name="player" type="Area2D"]
@@ -35,4 +35,4 @@ animation = &"inaction"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-15, 0)
-shape = SubResource("RectangleShape2D_onrkg")
+shape = SubResource("RectangleShape2D_hqtel")
