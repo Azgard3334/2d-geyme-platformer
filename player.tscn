@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://wkcam2kuolhf"]
+
+[ext_resource type="Texture2D" uid="uid://80pth4l31xbr" path="res://texture/knight.png" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://c7mbbb5bcl2we" path="res://player.gd" id="1_onrkg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_onrkg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4flbx")
+}],
+"loop": true,
+"name": &"inaction",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4flbx")
+}],
+"loop": true,
+"name": &"rightMove",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
+size = Vector2(106, 150)
+
+[node name="player" type="Area2D"]
+script = ExtResource("1_onrkg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_onrkg")
+animation = &"inaction"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-15, 0)
+shape = SubResource("RectangleShape2D_onrkg")
