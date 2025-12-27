@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bpmrvciu2q13f"]
+[gd_scene load_steps=5 format=3 uid="uid://bpmrvciu2q13f"]
 
 [ext_resource type="Script" uid="uid://cwlnaiwryat05" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://b5hfxa3uqu7mr" path="res://texture/theForest.png" id="1_ig7tw"]
-[ext_resource type="PackedScene" uid="uid://wkcam2kuolhf" path="res://player.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://cyb74k2elnw8x" path="res://kinematicPlayer.tscn" id="4_1bvp3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
+size = Vector2(1920, 43)
 
 [node name="main" type="Node"]
 script = ExtResource("1_0xm2m")
@@ -13,6 +16,12 @@ offset_bottom = 40.0
 texture = ExtResource("1_ig7tw")
 
 [node name="startPosition" type="Marker2D" parent="."]
-position = Vector2(480, 1000)
+position = Vector2(480, 800)
 
-[node name="player" parent="." instance=ExtResource("3_h2yge")]
+[node name="kinematicPlayer" parent="." instance=ExtResource("4_1bvp3")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(960, 1058.5)
+shape = SubResource("RectangleShape2D_h2yge")
